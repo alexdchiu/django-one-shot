@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My lists</title>
+    {% comment %}
+    <nav>
+      <a href="Link to the create page for a todo list">Create a new list</a>
+      <a href="Link to the create page for a todo item">Create a new item</a>
+    </nav>
+    {% endcomment %}
+  </head>
+  <body>
+    <main>
+      <table>
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Number of items</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for todo in todos_list %}
+          <tr>
+            <td><a href="">{{todo.name}}</a></td>
+            {% comment %}
+            <td>pull in counter from shopping list</td>
+            {% endcomment %}
+          </tr>
+        </tbody>
+      </table>
+    </main>
+  </body>
+</html>
