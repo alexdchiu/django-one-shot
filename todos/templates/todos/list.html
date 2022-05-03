@@ -22,15 +22,12 @@
           </tr>
         </thead>
         <tbody>
-          {% for todo in todolist_list %}
+          {% for list in todolist %}
           <tr>
             <td>
-              <a href="{% url "todolist_detail" todo.pk %}">{{todo.name}}</a>
+              <a href="{% url "todolist_detail" list.pk %}">{{list.name}}</a>
             </td>
-            {% comment %} {% url 'todolist_detail' todos.pk %} {% endcomment %}
-            {% comment %}
-            <td>pull in counter from shopping list</td>
-            {% endcomment %}
+            <td>{{list.items.all|length}}</td>
           </tr>
           {% endfor %}
         </tbody>
