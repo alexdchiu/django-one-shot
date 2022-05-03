@@ -4,6 +4,6 @@ from todos.views import (
   TodoListView,
 )
 
-urlpatters = [
-  path("",TodoListView.as_view(), name = "todos_list"),
+urlpatterns = [
+  path("todos",TodoListView.as_view(), name = "todos_list"),
 ]

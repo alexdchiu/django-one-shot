@@ -7,9 +7,9 @@ from django.http import HttpResponse, HttpResponseNotFound
 
 # Create your views here.
 
-def TodoListView(request):
+class TodoListView(ListView):
   model = TodoList
   template_name = "todos/list.html"
 
-  return render(request, "todos_list", HttpResponse(status=200))
+  # return render(request, "todos_list", HttpResponse(status=200))
 
