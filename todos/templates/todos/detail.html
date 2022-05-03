@@ -7,27 +7,29 @@
   </head>
   <body>
     <header>
-      <h1>My lists - detail view</h1>
       <nav>
-        <a href="Link to the delete page for the todo list">Delete this list</a>
-        <a href="Link to the edit page for the todo list">Edit this list</a>
+        <a href="{% url 'todolists_list' %}">Back to list</a>
+        <a href="{% url 'todolist_edit' todolist.pk %}">Edit</a>
+        <a href="{% url 'todolist_delete' todolist.pk %}">Delete</a>
       </nav>
+      <h1>{{ todolist.name }}</h1>
+      <h2>Tasks</h2>
     </header>
     <main>
       <table>
         <thead>
           <tr>
-            <th>Name</th>
-            <th>Number of items</th>
+            <th>Task</th>
+            <th>Due date</th>
           </tr>
         </thead>
         <tbody>
-          {% for list in todolists %}
+          {% for item in todolist.items.all %}
           <tr>
-            <td><a href="">{{listname}}</a></td>
-            {% comment %}
-            <td>pull in counter from shopping list</td>
-            {% endcomment %}
+            <td>
+              <a href="{% url 'todoitem_edit' item.pk %}">{{ item }}</a>
+            </td>
+            <td>{{item.due_date}}</td>
           </tr>
           {% endfor %}
         </tbody>

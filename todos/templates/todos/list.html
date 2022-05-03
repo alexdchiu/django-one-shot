@@ -10,7 +10,7 @@
       <h1>My lists</h1>
       <nav>
         <a href="{% url 'todolist_create' %}">Create a new list</a>
-        <a href="Link to the create page for a todo item">Create a new item</a>
+        <a href="{% url 'todoitem_create' %}">Create a new item</a>
       </nav>
     </header>
     <main>
@@ -22,9 +22,12 @@
           </tr>
         </thead>
         <tbody>
-          {% for todo in todos_list %}
+          {% for todo in todolist_list %}
           <tr>
-            <td><a href="">{{todo.name}}</a></td>
+            <td>
+              <a href="{% url "todolist_detail" todo.pk %}">{{todo.name}}</a>
+            </td>
+            {% comment %} {% url 'todolist_detail' todos.pk %} {% endcomment %}
             {% comment %}
             <td>pull in counter from shopping list</td>
             {% endcomment %}
