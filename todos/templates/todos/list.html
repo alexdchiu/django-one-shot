@@ -4,15 +4,15 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>My lists</title>
-    {% comment %}
-    <nav>
-      <a href="Link to the create page for a todo list">Create a new list</a>
-      <a href="Link to the create page for a todo item">Create a new item</a>
-    </nav>
-    {% endcomment %}
   </head>
   <body>
+    <header>
+      <h1>My lists</h1>
+      <nav>
+        <a href="Link to the create page for a todo list">Create a new list</a>
+        <a href="Link to the create page for a todo item">Create a new item</a>
+      </nav>
+    </header>
     <main>
       <table>
         <thead>
@@ -29,6 +29,7 @@
             <td>pull in counter from shopping list</td>
             {% endcomment %}
           </tr>
+          {% endfor %}
         </tbody>
       </table>
     </main>
