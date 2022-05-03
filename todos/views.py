@@ -19,3 +19,7 @@ class TodoListDetailView(DetailView):
   model = TodoList
   template_name = "todos/detail.html"
 
+class TodoListCreateView(CreateView):
+  model = TodoList
+  template_name = "todos/create.html"
+  fields = ["name", "created_on"]
