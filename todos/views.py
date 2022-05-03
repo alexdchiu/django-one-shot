@@ -22,4 +22,4 @@ class TodoListDetailView(DetailView):
 class TodoListCreateView(CreateView):
   model = TodoList
   template_name = "todos/create.html"
-  fields = ["name", "created_on"]
+  fields = ["name"]
