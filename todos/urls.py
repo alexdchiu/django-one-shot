@@ -17,6 +17,6 @@ urlpatterns = [
   path("create/",TodoListCreateView.as_view(), name="todolist_create"),
   path("<int:pk>/edit/", TodoListEditView.as_view(), name="todolist_edit"),
   path("<int:pk>/delete/", TodoListDeleteView.as_view(),name="todolist_delete"),
-  path("todos/items/create/", TodoItemCreateView.as_view(),name="todoitem_create"),
-  path("todos/items/<int:pk>/edit/", TodoItemEditView.as_view(),name="todoitem_edit"),    
+  path("items/create/", TodoItemCreateView.as_view(),name="todoitem_create"),
+  path("items/<int:pk>/edit/", TodoItemEditView.as_view(),name="todoitem_edit"),    
 ]
